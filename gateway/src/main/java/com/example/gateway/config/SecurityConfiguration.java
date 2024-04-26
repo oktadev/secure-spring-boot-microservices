@@ -7,10 +7,12 @@ import org.springframework.security.oauth2.client.oidc.web.logout.OidcClientInit
 import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
+@EnableMethodSecurity
 public class SecurityConfiguration {
 
     private final ClientRegistrationRepository clientRegistrationRepository;
