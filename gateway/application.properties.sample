@@ -1,0 +1,5 @@
+# trailing slash is important for issuer
+okta.oauth2.issuer=https://<auth0-domain>/
+okta.oauth2.client-id=
+okta.oauth2.client-secret=
+okta.oauth2.groupsClaim=https://spring-boot.example.com/roles
