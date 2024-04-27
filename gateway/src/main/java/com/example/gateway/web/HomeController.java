@@ -21,7 +21,7 @@ class HomeController {
     }
 
     @GetMapping("/admin")
-    @PreAuthorize("hasAuthority('Administrator')")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public String admin(@AuthenticationPrincipal OidcUser user) {
         var authentication = SecurityContextHolder.getContext().getAuthentication();
         var authorities = authentication.getAuthorities().stream()
