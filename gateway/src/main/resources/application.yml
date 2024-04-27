@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      default-filters:
+        - TokenRelay
+      mvc:
+        routes:
+          - id: car-service
+            uri: lb://car-service
+            predicates:
+              # proxy paths in car service
+              - Path=/cars/**
+    openfeign:
+      oauth2:
+        enabled: true
+        clientRegistrationId: okta
